@@ -1,0 +1,14 @@
+.answer-selector-container {
+  background-color: #ecebee;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.answer-selector-container > .check-container:not(:last-child),
+.answer-selector-container > .radio-container:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.answer-selector-container > .question-container {
+  margin-bottom: 20px;
+}

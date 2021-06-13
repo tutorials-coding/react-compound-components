@@ -23,7 +23,8 @@ export function Check({ id, title }) {
   }, [checked])
 
   return (
-    <div>
+    <label className="check-container" htmlFor={id}>
+      {title}
       <input
         type="checkbox"
         id={id}
@@ -32,7 +33,7 @@ export function Check({ id, title }) {
         checked={checked}
         onChange={handleChange}
       />
-      <label htmlFor={id}>{title}</label>
-    </div>
+      <span className="check-checkmark"></span>
+    </label>
   )
 }

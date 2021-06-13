@@ -11,7 +11,8 @@ export function Radio({ id, title }) {
   }, [setAnswer, id])
 
   return (
-    <div>
+    <label className="radio-container" htmlFor={id}>
+      {title}
       <input
         type="radio"
         id={id}
@@ -19,7 +20,7 @@ export function Radio({ id, title }) {
         name={questionId}
         onClick={handleClick}
       />
-      <label htmlFor={id}>{title}</label>
-    </div>
+      <span className="radio-checkmark"></span>
+    </label>
   )
 }

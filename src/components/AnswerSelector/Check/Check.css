@@ -1,0 +1,65 @@
+.check-container {
+  --size: 25px;
+  min-height: var(--size);
+
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  font-size: 14px;
+  user-select: none;
+
+  display: flex;
+  align-items: center;
+}
+
+/* hide the browser's default checkbox */
+.check-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* create a custom checkbox */
+.check-checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--size);
+  width: var(--size);
+  background-color: #c7c5cc;
+}
+
+/* add a grey background color on hover */
+.check-container:hover input ~ .check-checkmark {
+  background-color: #a39fab;
+}
+
+/* when the checkbox is checked add a blue background */
+.check-container input:checked ~ .check-checkmark {
+  background-color: #2196f3;
+}
+
+/* create the checkmark/indicator (hidden when not checked) */
+.check-checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+/* show the checkmark when checked */
+.check-container input:checked ~ .check-checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark */
+.check-container .check-checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid #ffffff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
