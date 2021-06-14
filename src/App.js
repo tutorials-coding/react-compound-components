@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import AnswerSelector from './components/AnswerSelector'
 import { question1 as q1, question2 as q2 } from './data/questions'
 
@@ -7,17 +7,20 @@ import './App.css'
 function App() {
   const [answers, setAnswers] = useState({})
 
-  const handleAnswerSelect = (data) => {
-    setAnswers((oldAnswers) => ({
-      ...oldAnswers,
-      [data.id]: data.answer,
-    }))
-    console.log(`question id: ${data.id}`, JSON.stringify(data, null, 2))
-  }
+  const handleAnswerSelect = useCallback(
+    (data) => {
+      setAnswers((oldAnswers) => ({
+        ...oldAnswers,
+        [data.id]: data.answer,
+      }))
+      console.log(`question id: ${data.id}`, JSON.stringify(data, null, 2))
+    },
+    [setAnswers]
+  )
 
-  const handleSubmit = () => {
+  const handleSubmit = useCallback(() => {
     console.log('answers', JSON.stringify(answers, null, 2))
-  }
+  }, [answers])
 
   return (
     <div className="main-container">
