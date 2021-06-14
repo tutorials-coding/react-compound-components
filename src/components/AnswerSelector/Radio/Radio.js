@@ -3,7 +3,7 @@ import { useAnswerSelectorContext } from '../context'
 
 import './Radio.css'
 
-export function Radio({ id, title }) {
+export function Radio({ id, children }) {
   const { setAnswer, questionId } = useAnswerSelectorContext()
 
   const handleClick = useCallback(() => {
@@ -12,7 +12,7 @@ export function Radio({ id, title }) {
 
   return (
     <label className="radio-container" htmlFor={id}>
-      {title}
+      {children}
       <input
         type="radio"
         id={id}

@@ -4,7 +4,7 @@ import { useAnswerSelectorContext } from '../context'
 
 import './Check.css'
 
-export function Check({ id, title }) {
+export function Check({ id, children }) {
   const [checked, setChecked] = useState(false)
 
   const { answer, setAnswer, questionId } = useAnswerSelectorContext()
@@ -24,7 +24,7 @@ export function Check({ id, title }) {
 
   return (
     <label className="check-container" htmlFor={id}>
-      {title}
+      {children}
       <input
         type="checkbox"
         id={id}

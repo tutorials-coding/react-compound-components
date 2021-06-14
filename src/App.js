@@ -22,16 +22,20 @@ function App() {
   return (
     <div className="main-container">
       <AnswerSelector id={q1.id} onChange={handleAnswerSelect}>
-        <AnswerSelector.Question text={q1.text} />
+        <AnswerSelector.Question>{q1.text}</AnswerSelector.Question>
         {q1.answers.map(({ id, title }) => (
-          <AnswerSelector.Radio key={id} id={id} title={title} />
+          <AnswerSelector.Radio key={id} id={id}>
+            {title}
+          </AnswerSelector.Radio>
         ))}
       </AnswerSelector>
 
       <AnswerSelector id={q2.id} onChange={handleAnswerSelect}>
-        <AnswerSelector.Question text={q2.text} />
+        <AnswerSelector.Question>{q2.text}</AnswerSelector.Question>
         {q2.answers.map(({ id, title }) => (
-          <AnswerSelector.Check key={id} id={id} title={title} />
+          <AnswerSelector.Check key={id} id={id}>
+            {title}
+          </AnswerSelector.Check>
         ))}
       </AnswerSelector>
 

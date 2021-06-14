@@ -1,9 +1,9 @@
 import './Question.css'
 
-export function Question({ text }) {
+export function Question({ children }) {
   return (
     <div className="question-container">
-      <p className="question-text">{text}</p>
+      <p className="question-content">{children}</p>
     </div>
   )
 }
